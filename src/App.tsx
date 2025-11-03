@@ -1,11 +1,10 @@
-import './App.css';
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
     return (
         <>
-            <div className="p-6 rounded-xl bg-slate-900 text-white">
-                Tailwind v4 setup test
-            </div>
+        <Navbar />
+        
         </>
     );
 }
