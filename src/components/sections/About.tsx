@@ -2,7 +2,7 @@ import { BackgroundLines } from "../ui/visuals/BackgroundLines";
 
 export default function About() {
     return (
-        <BackgroundLines className="bg-app text-app min-h-dvh">
+        <BackgroundLines id="about" className="bg-app text-app min-h-dvh">
             <div className="mx-auto flex min-h-dvh max-w-5xl flex-col justify-center px-6 py-20 sm:py-28">
                 <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-5xl">
                     About me

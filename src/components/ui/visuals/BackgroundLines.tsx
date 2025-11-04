@@ -7,15 +7,17 @@ export const BackgroundLines = ({
     children,
     className,
     svgOptions,
+    ...rest
 }: {
     children: React.ReactNode;
     className?: string;
     svgOptions?: {
         duration?: number;
     };
-}) => {
+} & React.HTMLAttributes<HTMLDivElement>) => {
     return (
         <div
+            {...rest}
             className={cn(
                 "relative overflow-hidden min-h-dvh w-full bg-white dark:bg-black",
                 className
@@ -98,7 +100,7 @@ const SVG = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="pointer-events-none absolute inset-0 -z-10 w-full h-full opacity-60 dark:opacity-40"
+            className="pointer-events-none absolute inset-0 z-0 w-full h-full opacity-60 dark:opacity-40"
         >
             {paths.map((path, idx) => (
                 <motion.path

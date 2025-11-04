@@ -23,7 +23,7 @@ const techItems: TechItem[] = [
 
 const Hero = () => {
     return (
-        <section className="relative overflow-hidden bg-app text-app">
+        <section id="home" className="relative overflow-hidden bg-app text-app">
             <WavyBackground
                 containerClassName="relative overflow-hidden items-start justify-start bg-app text-app"
                 backgroundFill="transparent"
