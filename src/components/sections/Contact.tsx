@@ -70,13 +70,18 @@ export default function Contact() {
                 </p>
 
                 {/* Aceternity “Signup Form” style: glassy card, subtle border, blur, dark-mode aware */}
-                <form
-                    onSubmit={onSubmit}
-                    className={cn(
-                        "mt-8 grid gap-4 rounded-2xl border border-black/10 dark:border-white/10",
-                        "bg-card/70 backdrop-blur p-6 sm:p-8 shadow"
-                    )}
-                >
+                <div className="relative mt-8">
+                    {/* gradient glows behind the form */}
+                    <div aria-hidden className="pointer-events-none absolute -inset-x-16 -top-12 h-40 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.25),_transparent_60%)] blur-2xl" />
+                    <div aria-hidden className="pointer-events-none absolute -inset-x-16 bottom-[-3rem] h-40 bg-[radial-gradient(ellipse_at_bottom,_rgba(139,92,246,0.25),_transparent_60%)] blur-2xl" />
+
+                    <form
+                        onSubmit={onSubmit}
+                        className={cn(
+                            "relative grid gap-4 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10",
+                            "bg-white/30 dark:bg-white/5 backdrop-blur-xl backdrop-saturate-150 p-6 sm:p-8 shadow-lg"
+                        )}
+                    >
                     <div className="grid gap-4 sm:grid-cols-2">
                         <div className="grid gap-2">
                             <label htmlFor="name" className="text-sm font-medium text-app">Name</label>
@@ -89,7 +94,7 @@ export default function Contact() {
                                 className={cn(
                                     "h-11 w-full rounded-xl border border-black/10 dark:border-white/10",
                                     "bg-white/70 dark:bg-black/30 px-3 text-app placeholder:text-muted",
-                                    "focus:outline-none focus:ring-2 ring-accent"
+                                    "focus:outline-none focus:ring-2 ring-accent transition-colors duration-200"
                                 )}
                                 autoComplete="name"
                             />
@@ -106,7 +111,7 @@ export default function Contact() {
                                 className={cn(
                                     "h-11 w-full rounded-xl border border-black/10 dark:border-white/10",
                                     "bg-white/70 dark:bg-black/30 px-3 text-app placeholder:text-muted",
-                                    "focus:outline-none focus:ring-2 ring-accent"
+                                    "focus:outline-none focus:ring-2 ring-accent transition-colors duration-200"
                                 )}
                                 autoComplete="email"
                             />
@@ -124,7 +129,7 @@ export default function Contact() {
                             className={cn(
                                 "h-11 w-full rounded-xl border border-black/10 dark:border-white/10",
                                 "bg-white/70 dark:bg-black/30 px-3 text-app placeholder:text-muted",
-                                "focus:outline-none focus:ring-2 ring-accent"
+                                "focus:outline-none focus:ring-2 ring-accent transition-colors duration-200"
                             )}
                         />
                     </div>
@@ -141,7 +146,7 @@ export default function Contact() {
                             className={cn(
                                 "w-full rounded-xl border border-black/10 dark:border-white/10",
                                 "bg-white/70 dark:bg-black/30 px-3 py-3 text-app placeholder:text-muted",
-                                "focus:outline-none focus:ring-2 ring-accent resize-y"
+                                "focus:outline-none focus:ring-2 ring-accent transition-colors duration-200 resize-none"
                             )}
                         />
                     </div>
@@ -161,7 +166,7 @@ export default function Contact() {
                             className={cn(
                                 "h-11 w-full rounded-xl border border-black/10 dark:border-white/10",
                                 "bg-white/70 dark:bg-black/30 px-3 text-app placeholder:text-muted",
-                                "focus:outline-none focus:ring-2 ring-accent"
+                                "focus:outline-none focus:ring-2 ring-accent transition-colors duration-200"
                             )}
                             aria-describedby="captchaHelp"
                         />
@@ -196,7 +201,8 @@ export default function Contact() {
                             </span>
                         )}
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </section>
     );

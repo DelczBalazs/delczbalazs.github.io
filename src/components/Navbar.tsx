@@ -56,7 +56,7 @@ const Navbar = () => {
                                     </a>
                                 ))}
                             </div>
-                            
+
                         </div>
                         <div className="flex shrink-0 items-center">
                             <DarkModeToggle className="ml-2" />
