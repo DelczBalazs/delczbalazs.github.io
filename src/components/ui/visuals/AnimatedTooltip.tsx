@@ -1,18 +1,19 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion, useTransform, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
+ 
 
-export const AnimatedTooltip = ({
-    items,
-}: {
+type AnimatedTooltipProps = {
     items: {
         id: number;
         name: string;
         designation: string;
         image: string;
     }[];
-}) => {
+};
+
+export const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const springConfig = { stiffness: 100, damping: 15 };
     const x = useMotionValue(0);
@@ -34,9 +35,9 @@ export const AnimatedTooltip = ({
 
     return (
         <>
-            {items.map((item, idx) => (
+            {items.map((item) => (
                 <div
-                    className="group relative -mr-4"
+                    className="group relative mr-0 md:-mr-4"
                     key={item.name}
                     onMouseEnter={() => setHoveredIndex(item.id)}
                     onMouseLeave={() => setHoveredIndex(null)}
@@ -78,7 +79,7 @@ export const AnimatedTooltip = ({
                         width={100}
                         src={item.image}
                         alt={item.name}
-                        className="relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+                        className="relative !m-0 h-12 w-12 rounded-full border-2 border-black dark:border-white object-contain p-1 transition duration-500 group-hover:z-30 group-hover:scale-105 md:h-14 md:w-14"
                     />
                 </div>
             ))}
