@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { WavyBackground } from "../ui/visuals/WavyBackground";
 
 import { AnimatedTooltip } from "../ui/visuals/AnimatedTooltip";
-import ColourfulText from "../ui/ColourfulText";
+import ColourfulText from "../ui/visuals/ColourfulText";
 
 type TechItem = { id: number; name: string; designation: string; image: string };
 

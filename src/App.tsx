@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import About from "./components/sections/About";
 import Hero from "./components/sections/Hero";
+import Footer from "./components/Footer";
 
 const App = () => {
     return (
@@ -8,6 +9,7 @@ const App = () => {
             <Navbar />
             <Hero />
             <About />
+            <Footer />
         </div>
     );
 }
