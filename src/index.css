@@ -1,1 +1,47 @@
 @import "tailwindcss";
+
+/* Smooth theme switching for color-related props only */
+@layer utilities {
+    .theme-transition * {
+        transition-property:
+            color,
+            background-color,
+            border-color,
+            text-decoration-color,
+            fill,
+            stroke;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .theme-transition * {
+        transition-duration: 1ms !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+:root {
+    --bg: 255 255 255;         /* light background */
+    --fg: 15 23 42;            /* slate-900 */
+    --muted: 100 116 139;      /* slate-500 */
+    --card: 248 250 252;       /* slate-50 */
+    --accent: 99 102 241;      /* indigo-500 */
+}
+.dark {
+    --bg: 2 6 23;              /* slate-950 */
+    --fg: 226 232 240;         /* slate-200 */
+    --muted: 148 163 184;      /* slate-400 */
+    --card: 15 23 42;          /* slate-900 */
+    --accent: 99 102 241;
+}
+
+@layer utilities {
+    .bg-app { background-color: rgb(var(--bg)); }
+    .text-app { color: rgb(var(--fg)); }
+    .bg-card { background-color: rgb(var(--card)); }
+    .text-muted { color: rgb(var(--muted)); }
+    .ring-accent { --tw-ring-color: rgb(var(--accent)); }
+}

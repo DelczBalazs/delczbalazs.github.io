@@ -4,6 +4,7 @@ import {
     DisclosurePanel,
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import DarkModeToggle from './ui/DarkModeToggle';
 
 const navigation = [
     { name: 'Home', href: '#', current: true },
@@ -58,11 +59,7 @@ const Navbar = () => {
                             
                         </div>
                         <div className="flex shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src="/public/codebracket.svg"
-                                className="h-8 w-auto"
-                            />
+                            <DarkModeToggle className="ml-2" />
                         </div>
                     </div>
                 </div>
