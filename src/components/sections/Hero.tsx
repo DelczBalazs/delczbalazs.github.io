@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { WavyBackground } from "../ui/visuals/WavyBackground";
-
 import { AnimatedTooltip } from "../ui/visuals/AnimatedTooltip";
-import ColourfulText from "../ui/visuals/ColourfulText";
+import { ColourfulText } from "../ui/visuals/ColorfulText";
 
 type TechItem = { id: number; name: string; designation: string; image: string };
 
@@ -43,11 +42,11 @@ const Hero = () => {
                     transition={{ duration: 0.6, ease: 'easeOut', delay: 0.05 }}
                     className="mt-6 max-w-2xl text-lg"
                 >
-                    I'm a <ColourfulText>Full-Stack Developer</ColourfulText>.
+                    I'm a <ColourfulText text="Full-Stack Developer"></ColourfulText>.
                     <br />
                     Check out my skills:
                 </motion.p>
-                <div className="mt-12 flex w-full flex-wrap items-center justify-center gap-3 md:gap-0" aria-label="Technologies I use">
+                <div className="mt-12 flex w-full flex-wrap items-center justify-center gap-3 md:gap-5" aria-label="Technologies I use">
                     <AnimatedTooltip items={techItems} />
                 </div>
             </WavyBackground>

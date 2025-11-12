@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export function ColourfulText({ text }: { text: string }) {
     const colors = [
-        "rgb(131, 179, 32)",
+        /* "rgb(131, 179, 32)",
         "rgb(47, 195, 106)",
         "rgb(42, 169, 210)",
         "rgb(4, 112, 202)",
@@ -13,7 +13,7 @@ export function ColourfulText({ text }: { text: string }) {
         "rgb(218, 0, 171)",
         "rgb(230, 64, 92)",
         "rgb(232, 98, 63)",
-        "rgb(249, 129, 47)",
+        "rgb(249, 129, 47)", */
     ];
 
     const [currentColors, setCurrentColors] = React.useState(colors);

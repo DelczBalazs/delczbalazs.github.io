@@ -1,8 +1,5 @@
-'use client';
-
 import { useState, useRef } from 'react';
 import { motion, useTransform, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
- 
 
 type AnimatedTooltipProps = {
     items: {

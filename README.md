@@ -76,7 +76,7 @@ This section explains how to run the project locally. Follow the steps below:
 
 Frontend (React + TypeScript)
 
-1. Navigate to the frontend/ folder.
+1. Navigate to the repository root folder.
 2. Install the required packages:
    ```sh
    npm install
