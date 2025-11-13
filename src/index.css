@@ -1,17 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Smooth theme switching for color-related props only */
 @layer utilities {
     .theme-transition * {
         transition-property:
-            color,
-            background-color,
-            border-color,
-            text-decoration-color,
-            fill,
-            stroke;
+            color, background-color, border-color, text-decoration-color, fill, stroke;
         transition-duration: 200ms;
         transition-timing-function: ease-in-out;
+    }
+
+    .hover-glow, button, a {
+        transition: filter 0.5s ease;
+    }
+
+    .hover-glow:hover, button:hover, a:hover {
+        filter: drop-shadow(-8px 45px 17px #69b7e42c);
     }
 }
 
@@ -24,31 +29,47 @@
 }
 
 :root {
-    --bg: 255 255 255;         /* light background */
-    --fg: 15 23 42;            /* slate-900 */
-    --muted: 100 116 139;      /* slate-500 */
-    --card: 248 250 252;       /* slate-50 */
-    --accent: 99 102 241;      /* indigo-500 */
+    --bg: 255 255 255; /* light background */
+    --fg: 15 23 42; /* slate-900 */
+    --muted: 100 116 139; /* slate-500 */
+    --card: 248 250 252; /* slate-50 */
+    --accent: 99 102 241; /* indigo-500 */
 }
 .dark {
-    --bg: 2 6 23;              /* slate-950 */
-    --fg: 226 232 240;         /* slate-200 */
-    --muted: 148 163 184;      /* slate-400 */
-    --card: 15 23 42;          /* slate-900 */
+    --bg: 2 6 23; /* slate-950 */
+    --fg: 226 232 240; /* slate-200 */
+    --muted: 148 163 184; /* slate-400 */
+    --card: 15 23 42; /* slate-900 */
     --accent: 99 102 241;
 }
 
 @layer utilities {
-    .bg-app { background-color: rgb(var(--bg)); }
-    .text-app { color: rgb(var(--fg)); }
-    .bg-card { background-color: rgb(var(--card)); }
-    .text-muted { color: rgb(var(--muted)); }
-    .ring-accent { --tw-ring-color: rgb(var(--accent)); }
+    .bg-app {
+        background-color: rgb(var(--bg));
+    }
+    .text-app {
+        color: rgb(var(--fg));
+    }
+    .bg-card {
+        background-color: rgb(var(--card));
+    }
+    .text-muted {
+        color: rgb(var(--muted));
+    }
+    .ring-accent {
+        --tw-ring-color: rgb(var(--accent));
+    }
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 @keyframes gradient-move {
-    0%   { background-position:   0% 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
 }
