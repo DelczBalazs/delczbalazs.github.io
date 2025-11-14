@@ -17,12 +17,12 @@ export default function About() {
                 </p>
 
                 <p className="text-muted mt-4 text-lg">
-                    On the frontend, I prefer <strong>TypeScript</strong>, <strong>React</strong>,
-                    and <strong>Tailwind CSS</strong> for fast, accessible UIs. On the backend, I’m
+                    On the frontend, I’m the most comfortable – I’ve spent years working with vanilla <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> and the libraries around them; these days I prefer <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Tailwind CSS</strong> for fast, accessible UIs. On the backend, I’m
                     comfortable with <strong>Java / Spring</strong> and{' '}
                     <strong>Node.js / Express</strong>, deploying to <strong>Docker</strong> with{' '}
-                    <strong>PostgreSQL</strong> or <strong>MongoDB</strong>. I’m pragmatic about
-                    testing and CI/CD so shipping stays smooth.
+                    <strong>PostgreSQL</strong> or <strong>MongoDB</strong>. I’m pragmatic about 
+                    <strong> testing</strong> and <strong>CI/CD</strong> so shipping stays smooth.
+
                 </p>
 
                 <p className="mt-4 text-lg">

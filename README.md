@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 <a id="readme-top"></a>
-  <a href="https://github.com/DelczBalazs/portfolio">
+  <a href="delczbalazs.github.io">
     <img src="images/codebracketdark.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -14,7 +14,7 @@ Simple yet carefully curated developer portfolio — fast, responsive, and focus
     <br />
     <br />
     &middot;
-    <a target="_blank" href="https://delczbalazs.github.io/DBalazs-portfolio">View Demo</a>
+    <a href="delczbalazs.github.io">View Demo</a>
     &middot;
   </p>
 </div>

@@ -7,7 +7,9 @@ type Props = { className?: string };
 export default function DarkModeToggle({ className }: Props) {
     const { theme, setTheme } = useTheme();
     const btn =
-        'h-8 w-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900 cursor-pointer';
+        'h-8 w-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900 text-slate-700 dark:text-slate-200 transition-colors';
+    const activeBtn =
+        'bg-[#69b7e42c] text-slate-900 shadow-sm hover:bg-[#69b7e42c]/80';
 
     return (
         <div
@@ -17,8 +19,7 @@ export default function DarkModeToggle({ className }: Props) {
             )}
         >
             <button
-                className={btn}
-                aria-pressed={theme === 'light'}
+                className={cn(btn, theme === 'light' && activeBtn)}
                 aria-label="Use light theme"
                 onClick={() => setTheme('light')}
                 title="Light"
@@ -26,8 +27,7 @@ export default function DarkModeToggle({ className }: Props) {
                 <Sun className="mx-auto h-5 w-5" />
             </button>
             <button
-                className={btn}
-                aria-pressed={theme === 'system'}
+                className={cn(btn, theme === 'system' && activeBtn)}
                 aria-label="Use system theme"
                 onClick={() => setTheme('system')}
                 title="System"
@@ -35,8 +35,7 @@ export default function DarkModeToggle({ className }: Props) {
                 <Monitor className="mx-auto h-5 w-5" />
             </button>
             <button
-                className={btn}
-                aria-pressed={theme === 'dark'}
+                className={cn(btn, theme === 'dark' && activeBtn)}
                 aria-label="Use dark theme"
                 onClick={() => setTheme('dark')}
                 title="Dark"

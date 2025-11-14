@@ -42,10 +42,10 @@ const cards: CardData[] = [
                     <a
                         target="_blank"
                         rel="noopener"
-                        href="https://delczbalazs.github.io/DBalazs-portfolio"
+                        href="https://delczbalazs.github.io"
                         className="bg-card text-app rounded-xl border border-black/10 px-4 py-2 font-medium shadow-sm dark:border-white/10"
                     >
-                        Case study
+                        Live demo(Deploying soon)
                     </a>
                 </div>
             </div>
@@ -77,10 +77,10 @@ const cards: CardData[] = [
                     <a
                         target="_blank"
                         rel="noopener"
-                        href="https://delczbalazs.github.io/DBalazs-portfolio"
+                        href="https://delczbalazs.github.io"
                         className="bg-card text-app rounded-xl border border-black/10 px-4 py-2 font-medium shadow-sm dark:border-white/10"
                     >
-                        Live
+                        Live demo(Coming soon)
                     </a>
                 </div>
             </div>
@@ -104,7 +104,7 @@ const cards: CardData[] = [
                     <a
                         target="_blank"
                         rel="noopener"
-                        href="https://delczbalazs.github.io/DBalazs-portfolio"
+                        href="https://delczbalazs.github.io"
                         className="rounded-xl bg-[rgb(var(--accent))] px-4 py-2 font-medium text-white shadow"
                     >
                         Repo
@@ -112,10 +112,10 @@ const cards: CardData[] = [
                     <a
                         target="_blank"
                         rel="noopener"
-                        href="https://delczbalazs.github.io/DBalazs-portfolio"
+                        href="https://delczbalazs.github.io"
                         className="bg-card text-app rounded-xl border border-black/10 px-4 py-2 font-medium shadow-sm dark:border-white/10"
                     >
-                        Marketplace
+                        Live demo(Coming soon)
                     </a>
                 </div>
             </div>
