@@ -14,21 +14,22 @@ import nodeIcon from "../../assets/nodejs-original.svg";
 import postgresqlIcon from "../../assets/postgresql-original.svg";
 import mongodbIcon from "../../assets/mongodb-original.svg";
 
-type TechItem = { id: number; name: string; designation: string; image: string };
+type TechItem = { id: number; name: string; designation: string; image: string, url: string; };
 
 const techItems: TechItem[] = [
-    { id: 1, name: "Git", designation: "VCS", image: gitIcon },
-    { id: 2, name: "Java", designation: "Language", image: javaIcon },
-    { id: 3, name: "Spring", designation: "BE Framework", image: springIcon },
-    { id: 4, name: "TypeScript", designation: "Language", image: typescriptIcon },
+    { id: 1, name: "Git", designation: "VCS", image: gitIcon, url: "https://git-scm.com/" },
+    { id: 2, name: "Java", designation: "Language", image: javaIcon, url: "https://www.java.com/" },
+    { id: 3, name: "Spring", designation: "BE Framework", image: springIcon, url: "https://spring.io/" },
+    { id: 4, name: "TypeScript", designation: "Language", image: typescriptIcon, url: "https://www.typescriptlang.org/" },
     /* { id: 5,  name: "Python",        designation: "Language",   image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }, */
-    { id: 6, name: "React", designation: "Library", image: reactIcon },
-    { id: 7, name: "Angular", designation: "FE Framework", image: angularIcon },
-    { id: 8, name: "Tailwind CSS", designation: "CSS Framework", image: tailwindIcon },
-    { id: 9,  name: "Node.js",       designation: "Runtime",    image: nodeIcon },
-    /* { id: 10, name: "Express.js", designation: "BE Framework", image: expressIcon }, */
-    { id: 11, name: "PostgreSQL", designation: "Database", image: postgresqlIcon },
-    { id: 12, name: "MongoDB", designation: "Database", image: mongodbIcon }
+    { id: 6, name: "React", designation: "Library", image: reactIcon, url: "https://reactjs.org/" },
+    { id: 7, name: "Angular", designation: "FE Framework", image: angularIcon, url: "https://angular.io/" },
+    { id: 8, name: "Tailwind CSS", designation: "CSS Framework", image: tailwindIcon, url: "https://tailwindcss.com/" },
+    { id: 9, name: "SCSS", designation: "Preprocessor", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg", url: "https://sass-lang.com/" },
+    { id: 10, name: "Node.js", designation: "Runtime", image: nodeIcon, url: "https://nodejs.org/" },
+    /* { id: 11, name: "Express.js", designation: "BE Framework", image: expressIcon }, */
+    { id: 12, name: "PostgreSQL", designation: "Database", image: postgresqlIcon, url: "https://www.postgresql.org/" },
+    { id: 13, name: "MongoDB", designation: "Database", image: mongodbIcon, url: "https://www.mongodb.com/" },
 ];
 
 const Hero = () => {

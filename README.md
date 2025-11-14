@@ -9,7 +9,7 @@
 <h3 align="center">D. Balázs Portfolio</h3>
 
   <p align="center">
-Simple yet carefully curated developer portfolio—fast, responsive, and focused on showcasing my frontend skills.
+Simple yet carefully curated developer portfolio — fast, responsive, and focused on showcasing not only my frontend skills, but also my detailed tooling setup (ESLint + Prettier, editor configuration, and Git line-ending/EOF settings) for consistent, professional code quality.
     <br />
     <br />
     <br />
