@@ -14,7 +14,7 @@ Simple yet carefully curated developer portfolio — fast, responsive, and focus
     <br />
     <br />
     &middot;
-    <a href="https://github.com/DelczBalazs/portfolio">View Demo</a>
+    <a href="https://delczbalazs.github.io/DBalazs-portfolio">View Demo</a>
     &middot;
   </p>
 </div>
