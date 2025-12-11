@@ -104,12 +104,31 @@ export const WavyBackground = ({
 
     useEffect(() => {
         const prefersReducedMotion =
-            typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            typeof window !== 'undefined' && typeof window.matchMedia === 'function' &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         const el = containerRef.current;
         if (!el) return;
 
-        const io = new IntersectionObserver((entries) => {
+        const IOCtor = (typeof window !== 'undefined' && (window as any).IntersectionObserver) as
+            | (new (
+                  callback: IntersectionObserverCallback,
+                  options?: IntersectionObserverInit,
+              ) => IntersectionObserver)
+            | undefined;
+
+        if (!IOCtor) {
+            // Test/SSR fallback: draw once (no continuous animation in JSDOM/SSR)
+            drawFrame();
+            return () => {
+                if (animationId !== undefined) {
+                    cancelAnimationFrame(animationId);
+                    animationId = undefined;
+                }
+            };
+        }
+
+        const io = new IOCtor((entries) => {
             const entry = entries[0];
             inViewRef.current = !!entry?.isIntersecting;
             if (inViewRef.current) {

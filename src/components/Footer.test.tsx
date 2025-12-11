@@ -34,7 +34,7 @@ describe('Footer', () => {
     it('shows the copyright line with your name', () => {
         render(<Footer />);
 
-        const copyright = screen.getByText(/2025 .*balázs délczeg\./i);
+        const copyright = screen.getByText(/2025 .*balázs délczeg\.?/i);
         expect(copyright).toBeInTheDocument();
     });
 });
