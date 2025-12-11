@@ -2,6 +2,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
 /* Smooth theme switching for color-related props only */
 @layer utilities {
     .theme-transition * {

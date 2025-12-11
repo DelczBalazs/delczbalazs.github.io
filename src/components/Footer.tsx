@@ -28,7 +28,7 @@ const Footer = () => {
                     </a>
                 </div>
 
-                <p className="text-sm">2025 &copy; Made by Balázs Délczeg.</p>
+                <p className="text-sm">2025 &copy; Balázs Délczeg</p>
             </div>
         </footer>
     );

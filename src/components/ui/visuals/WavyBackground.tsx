@@ -29,6 +29,9 @@ export const WavyBackground = ({
     const noise = createNoise3D();
     let w: number, h: number, nt: number, i: number, x: number, ctx: any, canvas: any;
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const inViewRef = useRef(true);
+    let scrollTimeout: number | undefined;
     const getSpeed = () => {
         switch (speed) {
             case 'slow':
@@ -69,12 +72,16 @@ export const WavyBackground = ({
     };
 
     let animationId: number | undefined;
-    const render = () => {
+    const drawFrame = () => {
         if (!ctx) return;
         ctx.fillStyle = backgroundFill || 'black';
         ctx.globalAlpha = waveOpacity || 0.5;
         ctx.fillRect(0, 0, w, h);
         drawWave(5);
+    };
+
+    const render = () => {
+        drawFrame();
         animationId = requestAnimationFrame(render);
     };
 
@@ -95,6 +102,56 @@ export const WavyBackground = ({
         };
     }, []);
 
+    useEffect(() => {
+        const prefersReducedMotion =
+            typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const el = containerRef.current;
+        if (!el) return;
+
+        const io = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            inViewRef.current = !!entry?.isIntersecting;
+            if (inViewRef.current) {
+                drawFrame();
+                if (!animationId && !prefersReducedMotion) {
+                    animationId = requestAnimationFrame(render);
+                }
+            } else {
+                if (animationId !== undefined) {
+                    cancelAnimationFrame(animationId);
+                    animationId = undefined;
+                }
+            }
+        }, { threshold: 0 });
+
+        io.observe(el);
+
+        const onScroll = () => {
+            drawFrame();
+            if (animationId !== undefined) {
+                cancelAnimationFrame(animationId);
+                animationId = undefined;
+            }
+            if (scrollTimeout !== undefined) {
+                window.clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = window.setTimeout(() => {
+                if (inViewRef.current && !prefersReducedMotion) {
+                    animationId = requestAnimationFrame(render);
+                }
+            }, 120);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        return () => {
+            io.disconnect();
+            window.removeEventListener('scroll', onScroll);
+            if (scrollTimeout !== undefined) window.clearTimeout(scrollTimeout);
+        };
+    }, []);
+
     const [isSafari, setIsSafari] = useState(false);
     useEffect(() => {
         // I'm sorry but i have got to support it on safari.
@@ -107,6 +164,7 @@ export const WavyBackground = ({
 
     return (
         <div
+            ref={containerRef}
             className={cn('flex h-screen flex-col items-center justify-center', containerClassName)}
         >
             <canvas
@@ -115,6 +173,8 @@ export const WavyBackground = ({
                 id="canvas"
                 style={{
                     ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
+                    willChange: 'transform, filter',
+                    transform: 'translateZ(0)'
                 }}
             ></canvas>
             <div className={cn('relative z-10', className)} {...props}>
