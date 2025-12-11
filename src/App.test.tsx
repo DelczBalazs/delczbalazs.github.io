@@ -26,7 +26,7 @@ describe('App', () => {
 
         // Footer copy
         expect(
-            screen.getByText(/2025 .*balázs délczeg\./i),
+            screen.getByText(/2025 .*balázs délczeg\.?/i),
         ).toBeInTheDocument();
     });
 
